@@ -2,7 +2,9 @@
   <nav>
     <h1>Nav's4Every1</h1>
   </nav>
+
   <ul>
+    <p>My Favorite mobile and hamburger animations</p>
     <HelloWorld msg="" />
     <li>
       <router-link class="firstlink" to="/Navigation1"
@@ -55,7 +57,10 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+p {
+  text-align: center;
+  line-height: 2rem;
+}
 nav {
   height: 10vh;
   background: rgb(15, 15, 15);
@@ -67,7 +72,7 @@ nav {
 ul {
   background: #283747;
   min-height: 90vh;
-  padding: 5rem;
+  padding: 3rem;
   color: #1ff118;
   display: flex;
   flex-direction: column;
