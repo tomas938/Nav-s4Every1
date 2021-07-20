@@ -1,4 +1,5 @@
 <template>
+ <div id="root">
   <header>
     <nav class="navigation">
       <div class="navigation__logo">
@@ -58,6 +59,7 @@
     <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
       {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
     </button>
+  </div>
   </div>
 </template>
 <script>

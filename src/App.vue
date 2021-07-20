@@ -1,7 +1,16 @@
 <template>
-  <router-view> </router-view>
+  <div id="root">
+    <router-view v-slot="{ Component }">
+      <transition
+        enter-active-class="animate__animated animate__fadeInLeft"
+        leave-active-class="animate__animated animate__fadeOutLeft"
+        mode="out-in"
+      >
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </div>
 </template>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 * {
@@ -70,6 +79,6 @@ button {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 </style>

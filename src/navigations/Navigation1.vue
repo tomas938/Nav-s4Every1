@@ -1,11 +1,45 @@
 <template>
-  <header>
-    <nav class="navigation">
-      <div class="navigation__logo">
-        <img src="../assets/logo-navs.png" alt="" />
-      </div>
-      <div class="navigation__links">
-        <ul v-show="!mobile">
+  <div id="root">
+    <header>
+      <nav class="navigation">
+        <div class="navigation__logo">
+          <img src="../assets/logo-navs.png" alt="" />
+        </div>
+        <div class="navigation__links">
+          <ul v-show="!mobile">
+            <li>
+              <router-link class="link" :to="{ name: 'Home' }"
+                >Home</router-link
+              >
+            </li>
+            <li>
+              <router-link class="link" :to="{ name: 'Home' }"
+                >About</router-link
+              >
+            </li>
+            <li>
+              <router-link class="link" :to="{ name: 'Home' }"
+                >Contact</router-link
+              >
+            </li>
+          </ul>
+        </div>
+        <div
+          class="navigation__hamburger"
+          @click="toggleMobileNav"
+          v-show="mobile"
+        >
+          <span class="line" :class="{ active: mobileNav }"></span>
+          <span class="line" :class="{ active: mobileNav }"></span>
+          <span class="line" :class="{ active: mobileNav }"></span>
+        </div>
+      </nav>
+      <div>
+        <ul
+          class="mobile__links"
+          :class="{ active: mobileNav }"
+          v-show="mobileNav"
+        >
           <li>
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
@@ -19,44 +53,18 @@
           </li>
         </ul>
       </div>
-      <div
-        class="navigation__hamburger"
-        @click="toggleMobileNav"
-        v-show="mobile"
-      >
-        <span class="line" :class="{ active: mobileNav }"></span>
-        <span class="line" :class="{ active: mobileNav }"></span>
-        <span class="line" :class="{ active: mobileNav }"></span>
-      </div>
-    </nav>
-    <div>
-      <ul
-        class="mobile__links"
-        :class="{ active: mobileNav }"
-        v-show="mobileNav"
-      >
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">About</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">Contact</router-link>
-        </li>
-      </ul>
+    </header>
+    <div class="btn">
+      <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
+        {{ templateBtn ? 'Coppied' : 'Copy Template' }}
+      </button>
+      <button class="btn-2" @click="copyScript(), scriptBtnToggle()">
+        {{ ScriptBtn ? 'Coppied' : ' Copy Script' }}
+      </button>
+      <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
+        {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
+      </button>
     </div>
-  </header>
-  <div class="btn">
-    <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
-      {{ templateBtn ? 'Coppied' : 'Copy Template' }}
-    </button>
-    <button class="btn-2" @click="copyScript(), scriptBtnToggle()">
-      {{ ScriptBtn ? 'Coppied' : ' Copy Script' }}
-    </button>
-    <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
-      {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
-    </button>
   </div>
 </template>
 <script>

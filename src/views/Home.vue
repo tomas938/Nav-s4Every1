@@ -1,48 +1,50 @@
 <template>
-  <nav>
-    <h1>Nav's4Every1</h1>
-  </nav>
+  <div id="root">
+    <nav>
+      <h1>Nav's4Every1</h1>
+    </nav>
 
-  <ul>
-    <p>My Favorite mobile and hamburger animations</p>
-    <p>(!!!Change logo path and install scss with CLI!!!)</p>
+    <ul>
+      <p>My Favorite mobile and hamburger animations</p>
+      <p>(!!!Change logo path and install scss with CLI!!!)</p>
 
-    <li>
-      <router-link class="firstlink" to="/Navigation1"
-        >Navigation <span class="first">1</span>
-      </router-link>
-    </li>
-    <li>
-      <router-link class="secondlink" to="/Navigation2"
-        >Navigation <span class="second">2</span></router-link
-      >
-    </li>
-    <li>
-      <router-link class="thirdlink" to="/Navigation3"
-        >Navigation <span class="third">3</span></router-link
-      >
-    </li>
-    <li>
-      <router-link class="fourthlink" to="/Navigation4"
-        >Navigation <span class="fourth">4</span></router-link
-      >
-    </li>
-    <li>
-      <router-link class="fifthlink" to="/Navigation5"
-        >Navigation <span class="fifth">5</span></router-link
-      >
-    </li>
-    <li>
-      <router-link class="sixthlink" to="/Navigation6"
-        >Navigation <span class="sixth">6</span></router-link
-      >
-    </li>
-    <li>
-      <router-link class="seventhlink" to="/Navigation7"
-        >Navigation <span class="seventh">7</span></router-link
-      >
-    </li>
-  </ul>
+      <li>
+        <router-link class="firstlink" to="/Navigation1"
+          >Navigation <span class="first">1</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link class="secondlink" to="/Navigation2"
+          >Navigation <span class="second">2</span></router-link
+        >
+      </li>
+      <li>
+        <router-link class="thirdlink" to="/Navigation3"
+          >Navigation <span class="third">3</span></router-link
+        >
+      </li>
+      <li>
+        <router-link class="fourthlink" to="/Navigation4"
+          >Navigation <span class="fourth">4</span></router-link
+        >
+      </li>
+      <li>
+        <router-link class="fifthlink" to="/Navigation5"
+          >Navigation <span class="fifth">5</span></router-link
+        >
+      </li>
+      <li>
+        <router-link class="sixthlink" to="/Navigation6"
+          >Navigation <span class="sixth">6</span></router-link
+        >
+      </li>
+      <li>
+        <router-link class="seventhlink" to="/Navigation7"
+          >Navigation <span class="seventh">7</span></router-link
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
