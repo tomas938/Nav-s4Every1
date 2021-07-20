@@ -21,17 +21,6 @@ li {
   justify-content: center;
   padding: 10rem;
   gap: 50px;
-  @media only screen and (max-width: 1200px) {
-    flex-direction: column;
-  }
-  @media only screen and (max-width: 620px) {
-    width: 100%;
-    margin: auto;
-    flex-direction: column;
-    padding: 1rem;
-    font-size: 0.6rem;
-    margin-top: 5rem;
-  }
 }
 .btn-1,
 .btn-2,
@@ -54,8 +43,25 @@ li {
 }
 button {
   padding: 3rem;
-  @media only screen and (max-width: 340px) {
+}
+@media only screen and (max-width: 340px) {
+  button {
     padding: 2rem;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .btn {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .btn {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 0.6rem;
+    margin-top: 5rem;
   }
 }
 </style>
