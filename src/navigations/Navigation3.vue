@@ -2,16 +2,10 @@
   <header>
     <nav class="navigation">
       <div class="navigation__logo">
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE LOGO ********////////////////////////
-				//********************************************************************************// !-->
         <img src="../assets/logo-navs.png" alt="" />
       </div>
       <div class="navigation__links">
         <ul v-show="!mobile">
-          <!-- //********************************************************************************//
-				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
-				//********************************************************************************// !-->
           <li>
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
@@ -31,9 +25,6 @@
         @click="toggleMobileNav"
         v-show="mobile"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************// !-->
         <span class="line" :class="{ active: mobileNav }"></span>
         <span class="line" :class="{ active: mobileNav }"></span>
         <span class="line" :class="{ active: mobileNav }"></span>
@@ -45,9 +36,6 @@
         :class="{ active: mobileNav }"
         v-show="mobileNav"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
-				//********************************************************************************// !-->
         <li>
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         </li>
@@ -116,7 +104,6 @@ export default {
           </li>
         </ul>
       </div>
-
       <div
         class="navigation__hamburger"
         @click="toggleMobileNav"
@@ -151,17 +138,6 @@ export default {
       </ul>
     </div>
   </header>
-   <div class="btn">
-    <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
-      {{ templateBtn ? 'Coppied' : 'Copy Template' }}
-    </button>
-    <button class="btn-2" @click="copyScript(), scriptBtnToggle()">
-      {{ ScriptBtn ? 'Coppied' : ' Copy Script' }}
-    </button>
-    <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
-      {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
-    </button>
-  </div>
 </template> `
       )
         .then(() => {
@@ -374,9 +350,7 @@ header {
       z-index: 1; ///***SHOW HAMBURGER WHILE ACTIVE STATE ***///
 
       .line {
-        //********************************************************************************//
         ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-        //********************************************************************************//
         display: block;
         width: 2.8rem;
         height: 0.4rem;
@@ -397,9 +371,7 @@ header {
     }
   }
 }
-//********************************************************************************//
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
-//********************************************************************************//
 .mobile__links {
   position: fixed;
   top: 0;

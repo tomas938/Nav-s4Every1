@@ -2,16 +2,10 @@
   <header>
     <nav class="navigation">
       <div class="navigation__logo">
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE LOGO ********////////////////////////
-				//********************************************************************************// !-->
         <img src="../assets/logo-navs.png" alt="" />
       </div>
       <div class="navigation__links">
         <ul v-show="!mobile">
-          <!-- //********************************************************************************//
-				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
-				//********************************************************************************// !-->
           <li>
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
@@ -31,9 +25,6 @@
         @click="toggleMobileNav"
         v-show="mobile"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************// !-->
         <svg class="line" width="75" height="75" viewBox="0 0 100 100">
           <path
             class="line line1"
@@ -59,9 +50,6 @@
         :class="{ active: mobileNav }"
         v-show="mobileNav"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
-				//********************************************************************************// !-->
         <li>
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         </li>
@@ -179,17 +167,6 @@ export default {
       </ul>
     </div>
   </header>
-   <div class="btn">
-    <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
-      {{ templateBtn ? 'Coppied' : 'Copy Template' }}
-    </button>
-    <button class="btn-2" @click="copyScript(), scriptBtnToggle()">
-      {{ ScriptBtn ? 'Coppied' : ' Copy Script' }}
-    </button>
-    <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
-      {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
-    </button>
-  </div>
 </template> `
       )
         .then(() => {
@@ -421,9 +398,7 @@ header {
       z-index: 1; ///***SHOW HAMBURGER WHILE ACTIVE STATE ***///
 
       .line {
-        //********************************************************************************//
         ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-        //********************************************************************************//
         fill: none;
         stroke: $hamburger-color;
         stroke-width: 6;
@@ -462,9 +437,7 @@ header {
     }
   }
 }
-//********************************************************************************//
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
-//********************************************************************************//
 .mobile__links {
   position: absolute;
   top: 0;

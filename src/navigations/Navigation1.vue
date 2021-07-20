@@ -2,16 +2,10 @@
   <header>
     <nav class="navigation">
       <div class="navigation__logo">
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE LOGO ********////////////////////////
-				//********************************************************************************// !-->
         <img src="../assets/logo-navs.png" alt="" />
       </div>
       <div class="navigation__links">
         <ul v-show="!mobile">
-          <!-- //********************************************************************************//
-				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
-				//********************************************************************************// !-->
           <li>
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
@@ -25,15 +19,11 @@
           </li>
         </ul>
       </div>
-
       <div
         class="navigation__hamburger"
         @click="toggleMobileNav"
         v-show="mobile"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************// !-->
         <span class="line" :class="{ active: mobileNav }"></span>
         <span class="line" :class="{ active: mobileNav }"></span>
         <span class="line" :class="{ active: mobileNav }"></span>
@@ -45,9 +35,6 @@
         :class="{ active: mobileNav }"
         v-show="mobileNav"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
-				//********************************************************************************// !-->
         <li>
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         </li>
@@ -93,67 +80,68 @@ export default {
   methods: {
     copyTemplate() {
       this.$copyText(
-        ` <template> <header>
-    <nav class="navigation">
-      <div class="navigation__logo">
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE LOGO ********////////////////////////
-				//********************************************************************************// !-->
-        <img src="../assets/logo-navs.png" alt="" />
-      </div>
-      <div class="navigation__links">
-        <ul v-show="!mobile">
-          <!-- //********************************************************************************//
-				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
-				//********************************************************************************// !-->
-          <li>
-            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: 'Home' }">About</router-link>
-          </li>
-          <li>
-            <router-link class="link" :to="{ name: 'Home' }"
-              >Contact</router-link
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div
-        class="navigation__hamburger"
-        @click="toggleMobileNav"
-        v-show="mobile"
-      >
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************// !-->
-        <span class="line" :class="{ active: mobileNav }"></span>
-        <span class="line" :class="{ active: mobileNav }"></span>
-        <span class="line" :class="{ active: mobileNav }"></span>
-      </div>
-    </nav>
-    <div>
-      <ul
-        class="mobile__links"
-        :class="{ active: mobileNav }"
-        v-show="mobileNav"
-      >
-        <!-- //********************************************************************************//
-				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
-				//********************************************************************************// !-->
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">About</router-link>
-        </li>
-        <li>
-          <router-link class="link" :to="{ name: 'Home' }">Contact</router-link>
-        </li>
-      </ul>
-    </div>
-  </header> </template> `
+        ` <template> 
+            <header>
+               <nav class="navigation">
+                <div class="navigation__logo">
+                  <!-- //********************************************************************************//
+                  ///////////////////////////******* CHANGE LOGO ********////////////////////////
+                  //********************************************************************************// !-->
+                  <img src="../assets/logo-navs.png" alt="" />
+                </div>
+                <div class="navigation__links">
+                  <ul v-show="!mobile">
+                    <!-- //********************************************************************************//
+                  ///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
+                  //********************************************************************************// !-->
+                    <li>
+                      <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+                    </li>
+                    <li>
+                      <router-link class="link" :to="{ name: 'Home' }">About</router-link>
+                    </li>
+                    <li>
+                      <router-link class="link" :to="{ name: 'Home' }"
+                        >Contact</router-link
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="navigation__hamburger"
+                  @click="toggleMobileNav"
+                  v-show="mobile"
+                >
+                  <!-- //********************************************************************************//
+                  ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
+                  //********************************************************************************// !-->
+                  <span class="line" :class="{ active: mobileNav }"></span>
+                  <span class="line" :class="{ active: mobileNav }"></span>
+                  <span class="line" :class="{ active: mobileNav }"></span>
+                </div>
+            </nav>
+            <div>
+               <ul
+                class="mobile__links"
+                :class="{ active: mobileNav }"
+                v-show="mobileNav"
+              >
+                <!-- //********************************************************************************//
+                ///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
+                //********************************************************************************// !-->
+                  <li>
+                  <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+                   </li>
+                   <li>
+                  <router-link class="link" :to="{ name: 'Home' }">About</router-link>
+                   </li>
+                   <li>
+                  <router-link class="link" :to="{ name: 'Home' }">Contact</router-link>
+                   </li>
+                 </ul>
+               </div>
+             </header>  
+          </template> `
       )
         .then(() => {
           console.log('copied!')
@@ -372,9 +360,7 @@ header {
       cursor: pointer;
       z-index: 1; ///***SHOW WHILE ACTIVE ***///
       .line {
-        //********************************************************************************//
         ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-        //********************************************************************************//
         display: block;
         width: 2.8rem;
         height: 0.4rem;
@@ -396,9 +382,7 @@ header {
     }
   }
 }
-//********************************************************************************//
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
-//********************************************************************************//
 .mobile__links {
   position: absolute;
   top: 0;
@@ -428,5 +412,4 @@ header {
   opacity: 1;
   transition: clip-path 0.5s linear;
 }
-
 </style>

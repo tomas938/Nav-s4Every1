@@ -2,16 +2,10 @@
   <header>
     <nav class="navigation">
       <div class="navigation__logo">
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE LOGO ********////////////////////////
-				//********************************************************************************// !-->
         <img src="../assets/logo-navs.png" alt="" />
       </div>
       <div class="navigation__links">
         <ul v-show="!mobile">
-          <!-- //********************************************************************************//
-				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
-				//********************************************************************************// !-->
           <li>
             <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           </li>
@@ -31,16 +25,13 @@
         @click="toggleMobileNav"
         v-show="mobile"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************// !-->
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
+          width="90"
+          height="90"
           viewBox="0 0 200 200"
         >
-          <g stroke-width="6.5" stroke-linecap="round">
+          <g stroke-width="12.5" stroke-linecap="round">
             <path
               :class="{ active: mobileNav }"
               d="M72 82.286h28.75"
@@ -91,9 +82,6 @@
         :class="{ active: mobileNav }"
         v-show="mobileNav"
       >
-        <!-- //********************************************************************************//
-				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
-				//********************************************************************************// !-->
         <li>
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         </li>
@@ -243,17 +231,6 @@ export default {
       </ul>
     </div>
   </header>
-   <div class="btn">
-    <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
-      {{ templateBtn ? 'Coppied' : 'Copy Template' }}
-    </button>
-    <button class="btn-2" @click="copyScript(), scriptBtnToggle()">
-      {{ ScriptBtn ? 'Coppied' : ' Copy Script' }}
-    </button>
-    <button class="btn-3" @click="copyStyle(), styleBtnToggle()">
-      {{ StyleBtn ? 'Coppied' : ' Copy Style' }}
-    </button>
-  </div>
 </template> `
       )
         .then(() => {
@@ -504,10 +481,7 @@ header {
       position: relative;
       cursor: pointer;
       z-index: 1; ///***SHOW HAMBURGER WHILE ACTIVE STATE ***///
-
-      //********************************************************************************//
       ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-      //********************************************************************************//
       svg {
         transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
         .active svg {
@@ -563,9 +537,7 @@ header {
     }
   }
 }
-//********************************************************************************//
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
-//********************************************************************************//
 .mobile__links {
   position: absolute;
   top: 0;

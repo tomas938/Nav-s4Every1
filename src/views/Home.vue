@@ -5,6 +5,7 @@
 
   <ul>
     <p>My Favorite mobile and hamburger animations</p>
+    <p>(!!!Change logo path and install scss with CLI!!!)</p>
     <HelloWorld msg="" />
     <li>
       <router-link class="firstlink" to="/Navigation1"
@@ -45,13 +46,8 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld,
-  },
 }
 </script>
 
