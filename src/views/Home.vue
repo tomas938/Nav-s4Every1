@@ -6,7 +6,7 @@
   <ul>
     <p>My Favorite mobile and hamburger animations</p>
     <p>(!!!Change logo path and install scss with CLI!!!)</p>
-    <HelloWorld msg="" />
+
     <li>
       <router-link class="firstlink" to="/Navigation1"
         >Navigation <span class="first">1</span>

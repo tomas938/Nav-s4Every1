@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view> </router-view>
 </template>
 
 <style>
@@ -63,5 +63,13 @@ button {
     font-size: 0.6rem;
     margin-top: 5rem;
   }
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
 }
 </style>

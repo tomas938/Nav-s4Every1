@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/index.js'
 import copyText from '@meforma/vue-copy-to-clipboard'
+const app = createApp(App)
 
-createApp(App).use(router).use(copyText).mount('#app')
+app.use(router)
+app.use(copyText)
+
+app.mount('#app')

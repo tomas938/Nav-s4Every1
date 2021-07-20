@@ -48,7 +48,7 @@
       </ul>
     </div>
   </header>
-   <div class="btn">
+  <div class="btn">
     <button class="btn-1" @click="copyTemplate(), templateBtnToggle()">
       {{ templateBtn ? 'Coppied' : 'Copy Template' }}
     </button>
@@ -68,6 +68,9 @@ export default {
       mobile: null,
       mobileNav: null,
       windowWidth: null,
+      templateBtn: null,
+      ScriptBtn: null,
+      StyleBtn: null,
     }
   },
   created() {
@@ -75,7 +78,7 @@ export default {
     this.checkScreenSize()
   },
   methods: {
-     copyTemplate() {
+    copyTemplate() {
       this.$copyText(
         ` <template>
   <header>
@@ -308,6 +311,15 @@ export default {
         .catch(() => {
           console.log(`can't copy`)
         })
+    },
+    templateBtnToggle() {
+      this.templateBtn = !this.templateBtn
+    },
+    scriptBtnToggle() {
+      this.ScriptBtn = !this.ScriptBtn
+    },
+    styleBtnToggle() {
+      this.StyleBtn = !this.StyleBtn
     },
     toggleMobileNav() {
       this.mobileNav = !this.mobileNav
