@@ -152,7 +152,7 @@ header {
       }
       .active {
         &:nth-child(1) {
-          transform: rotate(-135deg) translateX(-5px) translateY(-2px);
+          transform: rotate(-135deg) translateX(-7px) translateY(-1px);
         }
         &:nth-child(2) {
           transform: rotate(-45deg);
