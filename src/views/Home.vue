@@ -43,18 +43,18 @@
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HelloWorld,
   },
-};
+}
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 nav {
   height: 10vh;
@@ -66,7 +66,7 @@ nav {
 }
 ul {
   background: #283747;
-  height: 90vh;
+  min-height: 90vh;
   padding: 5rem;
   color: #1ff118;
   display: flex;
@@ -128,5 +128,18 @@ a {
 }
 a:hover {
   color: #000000;
+}
+@media only screen and (max-width: 600px) {
+  ul {
+    padding: 5rem 0;
+  }
+}
+@media only screen and (max-width: 350px) {
+  a {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1rem;
+  }
 }
 </style>
