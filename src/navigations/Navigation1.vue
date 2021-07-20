@@ -93,7 +93,7 @@ export default {
   methods: {
     copyTemplate() {
       this.$copyText(
-        ` <header>
+        ` <template> <header>
     <nav class="navigation">
       <div class="navigation__logo">
         <!-- //********************************************************************************//
@@ -153,7 +153,7 @@ export default {
         </li>
       </ul>
     </div>
-  </header>`
+  </header> </template> `
       )
         .then(() => {
           console.log('copied!')
@@ -270,6 +270,7 @@ header {
     copyScript() {
       this.$copyText(
         `
+
 export default {
   name: 'Navigation1',
   data() {
@@ -441,12 +442,15 @@ header {
     flex-direction: column;
     padding: 1rem;
     font-size: 0.6rem;
-    margin-top: 10rem;
+    margin-top: 5rem;
   }
 }
 .btn-1,
 .btn-2,
 .btn-3 {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 15px 5px #000000;
   cursor: pointer;
 }
 .btn-1 {
@@ -462,5 +466,8 @@ header {
 }
 button {
   padding: 3rem;
+  @media only screen and (max-width: 340px) {
+    padding: 2rem;
+  }
 }
 </style>
