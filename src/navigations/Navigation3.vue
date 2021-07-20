@@ -158,7 +158,7 @@ header {
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
 //********************************************************************************//
 .mobile__links {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   // z-index: -1; ///*** IF U WANT TO SEE NAVBAR WHILE ACTIVE STATE ***///

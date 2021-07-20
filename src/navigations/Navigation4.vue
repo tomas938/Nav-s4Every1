@@ -137,18 +137,30 @@ header {
         display: block;
         width: 2.8rem;
         height: 0.4rem;
-        margin: 0.5rem auto;
+        margin: 0.5rem;
         background-color: $hamburger-color;
-        transition: all 0.3s ease-in-out;
+        transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(3) {
+          width: 60%;
+        }
       }
       .active {
         &:nth-child(1) {
-          transform: translateY(17px);
+          transform-origin: bottom;
+          transform: rotatez(45deg) translate(8px, 0px);
         }
         &:nth-child(2) {
+          transform-origin: top;
+          transform: rotatez(-45deg);
         }
         &:nth-child(3) {
-          transform: translateY(-13px);
+          transform-origin: bottom;
+          width: 38%;
+          transform: translate(20px, -8px) rotatez(45deg);
         }
       }
     }
@@ -158,7 +170,7 @@ header {
 ///////////////////////////******* ACTIVE CLASS ********////////////////////////
 //********************************************************************************//
 .mobile__links {
-  position: absolute;
+  position: fixed; ////*** CHANGED TO FIXED BECAUSE OF ANIMATIONS OVERFLOW !!! ***/
   top: 0;
   left: 0;
   // z-index: -1; ///*** IF U WANT TO SEE NAVBAR WHILE ACTIVE STATE ***///
@@ -168,7 +180,7 @@ header {
   padding-top: 15rem;
   background-color: black;
   display: block !important;
-  transform: scale(0.1) rotate(360deg);
+  transform: scaleX(0) rotate(180deg);
   opacity: 0;
   transition: all 0.6s ease-in-out;
 
@@ -182,7 +194,7 @@ header {
   }
 }
 .active {
-  transform: scale(1) rotate(0deg);
+  transform: scaleX(1) rotate(0deg);
   opacity: 1;
   transition: all 0.6s linear;
 }

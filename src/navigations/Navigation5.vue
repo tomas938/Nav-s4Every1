@@ -1,108 +1,201 @@
 <template>
-	<header>
-		<nav class="navigation">
-			<div class="navigation__logo">
-				<!-- //********************************************************************************//
+  <header>
+    <nav class="navigation">
+      <div class="navigation__logo">
+        <!-- //********************************************************************************//
 				///////////////////////////******* CHANGE LOGO ********////////////////////////
 				//********************************************************************************// !-->
-				<img src="../assets/logo-navs.png" alt="" />
-			</div>
-			<ul class="navigation__links" v-show="!mobile">
-				<!-- //********************************************************************************//
+        <img src="../assets/logo-navs.png" alt="" />
+      </div>
+      <div class="navigation__links">
+        <ul v-show="!mobile">
+          <!-- //********************************************************************************//
 				///////////////////////////******* ADD DESKTOP LINKS ********////////////////////////
 				//********************************************************************************// !-->
-				<li><a href="">Home</a></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
-			<div
-				class="navigation__hamburger"
-				@click="toggleMobileNav"
-				v-show="mobile"
-			>
-				<!-- //********************************************************************************//
+          <li>
+            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+          </li>
+          <li>
+            <router-link class="link" :to="{ name: 'Home' }">About</router-link>
+          </li>
+          <li>
+            <router-link class="link" :to="{ name: 'Home' }"
+              >Contact</router-link
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="navigation__hamburger"
+        @click="toggleMobileNav"
+        v-show="mobile"
+      >
+        <!-- //********************************************************************************//
 				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
 				//********************************************************************************// !-->
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
-			</div>
-		</nav>
-		<ul class="mobile__links" v-show="mobileNav">
-			<!-- //********************************************************************************//
+        <span class="line" :class="{ active: mobileNav }"></span>
+        <span class="line" :class="{ active: mobileNav }"></span>
+        <span class="line" :class="{ active: mobileNav }"></span>
+      </div>
+    </nav>
+    <div>
+      <ul
+        class="mobile__links"
+        :class="{ active: mobileNav }"
+        v-show="mobileNav"
+      >
+        <!-- //********************************************************************************//
 				///////////////////////////******* ADD MOBILE LINKS ********////////////////////////
 				//********************************************************************************// !-->
-			<li><a href="">Homeddd</a></li>
-			<li><a href="">About</a></li>
-			<li><a href="">Contact</a></li>
-		</ul>
-	</header>
+        <li>
+          <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: 'Home' }">About</router-link>
+        </li>
+        <li>
+          <router-link class="link" :to="{ name: 'Home' }">Contact</router-link>
+        </li>
+      </ul>
+    </div>
+  </header>
 </template>
 <script>
 export default {
-	name: "Navigation1",
-	data() {
-		return {
-			mobile: null,
-			mobileNav: null,
-			windowWidth: null,
-		};
-	},
-	created() {
-		window.addEventListener("resize", this.checkScreenSize);
-		this.checkScreenSize();
-	},
-	methods: {
-		toggleMobileNav() {
-			this.mobileNav = !this.mobileNav;
-		},
-		checkScreenSize() {
-			this.windowWidth = window.innerWidth;
-			if (this.windowWidth <= 800) {
-				this.mobile = true;
-				return;
-			}
-			this.mobile = false;
-			this.mobileNav = false;
-			return;
-		},
-	},
-};
+  name: 'Navigation1',
+  data() {
+    return {
+      mobile: null,
+      mobileNav: null,
+      windowWidth: null,
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.checkScreenSize)
+    this.checkScreenSize()
+  },
+  methods: {
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav
+    },
+    checkScreenSize() {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth <= 800) {
+        this.mobile = true
+        return
+      }
+      this.mobile = false
+      this.mobileNav = false
+      return
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
+$hamburger-color: rgb(255, 115, 0);
+$navigation-bg: rgb(253, 226, 208);
+$links-color: rgba(0, 0, 0, 0.726);
 header {
-	background: rgb(255, 240, 24);
-	.navigation {
-		width: 80%;
-		margin: auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		img {
-			width: 8rem;
-			height: 8rem;
-		}
-		&__hamburger {
-			cursor: pointer;
-			.line {
-				//********************************************************************************//
-				///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
-				//********************************************************************************//
-				display: block;
-				width: 2.8rem;
-				height: 0.4rem;
-				margin: 0.5rem auto;
-				background-color: rgb(255, 115, 0);
-			}
-		}
-	}
-	ul {
-		display: flex;
-	}
-	li {
-		&:not(:last-child) {
-			margin-right: 5rem;
-		}
-	}
+  background: $navigation-bg;
+  .navigation {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      position: relative; ///***NEED FOR Z-INDEX***/
+      width: 8rem;
+      height: 8rem;
+      z-index: 1;
+    }
+    &__links {
+      ul {
+        display: flex;
+        li {
+          list-style: none;
+          &:not(:last-child) {
+            margin-right: 5rem;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: $links-color;
+        }
+      }
+    }
+    &__hamburger {
+      position: relative;
+      cursor: pointer;
+      z-index: 1; ///***SHOW HAMBURGER WHILE ACTIVE STATE ***///
+
+      .line {
+        //********************************************************************************//
+        ///////////////////////////******* CHANGE HAMBURGER ********////////////////////////
+        //********************************************************************************//
+        display: block;
+        width: 2.8rem;
+        height: 0.4rem;
+        margin: 0.5rem;
+        background-color: $hamburger-color;
+        transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+        &:nth-child(1) {
+          width: 35%;
+        }
+        &:nth-child(3) {
+          width: 60%;
+        }
+      }
+      .active {
+        &:nth-child(1) {
+          transform-origin: bottom;
+          transform: rotatez(45deg) translate(8px, 0px);
+        }
+        &:nth-child(2) {
+          transform-origin: top;
+          transform: rotatez(-45deg);
+        }
+        &:nth-child(3) {
+          transform-origin: bottom;
+          width: 38%;
+          transform: translate(20px, -8px) rotatez(45deg);
+        }
+      }
+    }
+  }
+}
+//********************************************************************************//
+///////////////////////////******* ACTIVE CLASS ********////////////////////////
+//********************************************************************************//
+.mobile__links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  // z-index: -1; ///*** IF U WANT TO SEE NAVBAR WHILE ACTIVE STATE ***///
+  z-index: 0; //***HIDE NAVBAR***/
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 15rem;
+  background-color: black;
+  display: block !important;
+  transform: scaleX(0) rotate(180deg);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+
+  li {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  a {
+    color: white;
+    font-size: 1.8rem;
+  }
+}
+.active {
+  transform: scaleX(1) rotate(0deg);
+  opacity: 1;
+  transition: all 0.6s linear;
 }
 </style>
